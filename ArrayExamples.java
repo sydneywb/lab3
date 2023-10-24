@@ -1,12 +1,14 @@
 
 
+// all the methods have bugs
+
 public class ArrayExamples {
 
   // Changes the input array to be in reversed order
   static void reverseInPlace(int[] arr) {
     for(int i = 0; i < arr.length; i += 1) {
       arr[i] = arr[arr.length - i - 1];
-    }
+    } // doesn't create temporary variable, so array forgets first half of elements and fails to fully reverse
   }
 
   // Returns a *new* array with all the elements of the input array in reversed
@@ -16,7 +18,7 @@ public class ArrayExamples {
     for(int i = 0; i < arr.length; i += 1) {
       arr[i] = newArray[arr.length - i - 1];
     }
-    return arr;
+    return arr; // returns the original array in reversed order instead of a new array
   }
 
   // Averages the numbers in the array (takes the mean), but leaves out the

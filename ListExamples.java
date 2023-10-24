@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
+
+// all the methods have bugs
+
 interface StringChecker { boolean checkString(String s); }
 
 class ListExamples {

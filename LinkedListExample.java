@@ -9,6 +9,9 @@ class Node {
         this.next = next;
     }
 }
+
+// at least one method has a bug
+
 class LinkedList {
     Node root;
     public LinkedList() {

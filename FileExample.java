@@ -38,6 +38,8 @@ public class FileExample {
 
   */
 
+  // this method has a bug
+
 	static List<File> getFiles(File start) throws IOException {
 	  File f = start;
 	  List<File> result = new ArrayList<>();
