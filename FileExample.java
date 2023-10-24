@@ -42,12 +42,12 @@ public class FileExample {
 
 	static List<File> getFiles(File start) throws IOException {
 	  File f = start;
-	  List<File> result = new ArrayList<>();
+	  List<File> result = new ArrayList<>(); // result is ArrayList of Files
 	  result.add(start);
 	  if(f.isDirectory()) {
 	    File[] paths = f.listFiles();
 	    for(File subFile: paths) {
-	      result.add(subFile);
+	      result.add(subFile); // only one level, does not consider directories within directories
 	    }
 	  }
 	  return result;
