@@ -10,8 +10,6 @@ class Node {
     }
 }
 
-// at least one method has a bug
-
 class LinkedList {
     Node root;
     public LinkedList() {
@@ -41,21 +39,22 @@ class LinkedList {
             return;
         }
         // Otherwise, loop until the end and add at the end with a null
-        while(n.next != null) {
+        while(n.next != null) { // 4, 3, 2, 1
             n = n.next;
-            n.next = new Node(value, null);
+            n.next = new Node(value, null); // BUG: should be outside while loop
+            // 4, 3, 5, 5, 5, 5 ... instead of 4, 3, 2, 1, 5
         }
     }
     /**
      * @return the value of the first element in the list
      */
     public int first() {
-        return this.root.value;
+        return this.root.value; // correct
     }
     /**
      * @return the value of the last element in the list
      */
-    public int last() {
+    public int last() { // correct
         Node n = this.root;
         // If no such element, throw an exception
         if(n == null) { throw new NoSuchElementException(); }
@@ -70,7 +69,7 @@ class LinkedList {
     /**
      * @return a string representation of the list
      */
-    public String toString() {
+    public String toString() { // correct
         Node n = this.root;
         String s = "";
         while(n != null) {
@@ -82,7 +81,7 @@ class LinkedList {
     /**
      * @return the number of elements in the list
      */
-    public int length() {
+    public int length() { // correct
         Node n = this.root;
         int i = 0;
         while(n != null) {
