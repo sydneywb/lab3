@@ -15,7 +15,7 @@ class ListExamples {
     List<String> result = new ArrayList<>();
     for(String s: list) {
       if(sc.checkString(s)) {
-        result.add(0, s);
+        result.add(0, s); // take out 0 to add elements in order they appear in input list
       }
     }
     return result;
@@ -43,7 +43,7 @@ class ListExamples {
     }
     while(index2 < list2.size()) {
       result.add(list2.get(index2));
-      index1 += 1;
+      index1 += 1; // bug, should be index2
     }
     return result;
   }
